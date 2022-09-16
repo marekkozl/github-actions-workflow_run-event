@@ -13,4 +13,14 @@ jobs:
     name: Dispatcher
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ github.job }}
+      - name: Get previous workflow status
+        uses: status@main
+        id: last_status
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run Success
+        if: ${{ success() && steps.last_status.outputs.last_status == 'failure' }}
+        run: echo "SUCCESS"
+      - name: Run Failure
+        if: ${{ success() && steps.last_status.outputs.last_status == 'success' }}
+        run: echo "FAILURE"
