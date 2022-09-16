@@ -2,6 +2,10 @@
 name: Preflight
 
 on:
+  workflow_run:
+    workflows: [Dispatcher]
+    types:
+      - completed
   workflow_dispatch:
 
 jobs:
