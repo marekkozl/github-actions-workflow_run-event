@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get previous workflow status
-        uses: status@main
+        uses: github-actions-workflow_run-event/.github/workflows/status.yml@main
         id: last_status
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
