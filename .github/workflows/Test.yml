@@ -26,11 +26,6 @@ jobs:
     needs: [test-job, test-job2]
     runs-on: ubuntu-latest
     steps:
-      - name: Dependabot metadata
-        id: metadata
-        uses: dependabot/fetch-metadata@v1.1.1
-        with:
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
       - name: Approve a PR
         run: gh pr review --approve "$PR_URL"
         env:
