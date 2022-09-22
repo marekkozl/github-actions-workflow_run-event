@@ -1,11 +1,7 @@
 ---
 name: Test
 
-on:
-  workflow_run:
-    workflows: [Dispatcher]
-    types:
-      - completed
+on: pull_request
 
 jobs:
   test-job:
@@ -13,7 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.workflow_run.head_branch }}
-      - run: git branch
-      - run: env
+      - name: unit_tests
+      - run: echo "Test"
+      
+  test-job2:
+    name: Test Step2
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: unit_tests2
+      - run: echo "Test2"
