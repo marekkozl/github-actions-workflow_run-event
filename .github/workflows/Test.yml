@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: unit_tests
-      - run: echo "Test"
+        run: echo "Test"
       
   test-job2:
     name: Test Step2
@@ -18,4 +18,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: unit_tests2
-      - run: echo "Test2"
+        run: echo "Test2"
