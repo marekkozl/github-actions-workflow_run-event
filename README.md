@@ -4,7 +4,7 @@ This repository contains a code example to accompany my answer to the question [
 
 ## The Question
 
-> Could anybody tell me how to implement the **example** proposed using the new event `workflow_run`? The documentation only provide a very simple example:
+> Could anybody tell me how to implement the **example** proposed using the new event `workflow_run`? The documentation only provide a very simple example
 > 
 > ```yaml
 > on:
