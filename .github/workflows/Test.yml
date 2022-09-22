@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: unit_tests
-        run: exit 1
+        run: echo ${{ github.actor }}
       
   test-job2:
     name: Test Step2
