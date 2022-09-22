@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: unit_tests2
-        run: echo "Test2"
+        run: echo ${{ github.actor }}
   dependabot:
     needs: [test-job, test-job2]
     runs-on: ubuntu-latest
