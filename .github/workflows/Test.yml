@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: unit_tests
-        run: echo "Test"
+        run: exit 1
       
   test-job2:
     name: Test Step2
