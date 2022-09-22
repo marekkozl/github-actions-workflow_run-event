@@ -8,6 +8,7 @@ permissions:
 
 jobs:
   test-job:
+    if: "!contains(github.event.head_commit.message, '[skip actions]')"
     name: Test Step
     runs-on: ubuntu-latest
     steps:
@@ -16,6 +17,7 @@ jobs:
         run: echo ${{ github.actor }}
       
   test-job2:
+    if: "!contains(github.event.head_commit.message, '[skip actions]')"
     name: Test Step2
     runs-on: ubuntu-latest
     steps:
